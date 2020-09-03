@@ -16,16 +16,16 @@ stages:
   jobs:
   - job: FirstJob
     steps:
-    - bash: echo Build FirstJob $(runman) %(env)
+    - bash: echo Build FirstJob $(runman) $(env)
   - job: Secondjob
     steps:
-    - bash: echo Build Secondjob  %(env)
+    - bash: echo Build Secondjob  $(env)
 - stage: Test
   dependsOn: Build
   jobs:
     - job: TestJob
       steps:
-      - bash: echo Build TestJob  %(env)
+      - bash: echo Build TestJob $(env)
 - stage: Deploy
   dependsOn: Test
   jobs:
