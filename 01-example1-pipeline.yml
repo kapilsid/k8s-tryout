@@ -11,19 +11,21 @@ pool:
 
 stages:
 - stage: Build
+  variables: 
+    environment : deewar
   jobs:
   - job: FirstJob
     steps:
-    - bash: echo Build FirstJob
+    - bash: echo Build FirstJob %{runman} %{envronment}
   - job: Secondjob
     steps:
-    - bash: echo Build Secondjob  
+    - bash: echo Build Secondjob  %{envronment}
 - stage: Test
   dependsOn: Build
   jobs:
     - job: TestJob
       steps:
-      - bash: echo Build TestJob  
+      - bash: echo Build TestJob  %{envronment}
 - stage: Deploy
   dependsOn: Test
   jobs:
