@@ -19,7 +19,7 @@ steps:
     backendServiceArm: 'azure-resource-manager-service-connection'
     ensureBackend: true
     backendAzureRmResourceGroupName: 'terraform-backend-rg'
-    backendAzureRmResourceGroupLocation: 'useast'
+    backendAzureRmResourceGroupLocation: 'eastus'
     backendAzureRmStorageAccountName: 'storageacctkapil321'
     backendAzureRmContainerName: 'storageacctkapilcontainer'
     backendAzureRmKey: 'k8s-dev.tfstate'
